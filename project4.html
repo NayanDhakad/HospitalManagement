@@ -1,0 +1,50 @@
+<?php
+   $host="localhost";
+   $user="root";
+   $pass="";
+   $db = "signup";
+
+  // session_start();
+   
+   if(isset($_POST['login']) {
+      // username and password sent from form 
+      
+      $myusername = $_POST['username'];
+      $mypassword = $_POST['password']; 
+      $conn=mysqli_connect($host,$user,$pass,$db) or die("connection error");
+      $sql = "SELECT * FROM patient WHERE username = '$myusername' and password = '$mypassword';";
+      $row = mysqli_query($conn,$sql);
+      if(mysqli_num_rows($row)>0){
+	  echo "login successfull";
+       $k==1;
+      }	  
+      }	  
+          
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($k==1) {
+	    echo "hello";
+         
+      }
+   
+?>
+<html>
+<head>
+<title> Hospital Management </title>
+</head>
+<body style="background-color:black;">
+<h2 style="text-align:center">AIIMS DELHI</h2>
+<p><img src="img4.jpg" width="900" height="352"></p>
+<form action="docinfo.php">
+<input type="submit" value="Doctors Availability">
+</form><br>
+<form action="roominfo.php">
+<input type="submit" value="Available Rooms">
+</form><br>
+<form action="patient.html">
+<br><input type="submit" value="Patient List"<br>
+</form>
+<form action="stores.php">
+<br><input type="submit" value="Medical stores"<br>
+</form>
+</html>
